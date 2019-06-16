@@ -12,17 +12,18 @@ object AveragePriceHouse {
     val lines = sc.textFile("files/RealEstate.csv")
     val cleanLines = lines.filter(line => !line.contains("Bedrooms")) // basicamente eliminamos el primer weon renglon
 
-    // WTF? porque le pone el 1 en el value? WTF? ya lo vi y aun no le entiendo xd
-    val housePricePairRdd = cleanLines.map(line => (line.split(",")(3), (1, line.split(",")(2).toDouble)))
+    // hace una dupla donde la llave es el numero de cuartos y el valor es un contador empezando en (1) el precio de la casa
+    val housePricePairRdd = cleanLines.map(line => (line.split(",")(3), AvgCount(1, line.split(",")(2).toDouble)))
 
-    val housePriceTotal = housePricePairRdd.reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2))
+    val housePriceTotal = housePricePairRdd.reduceByKey((x, y) => AvgCount(x.count + y.count, x.total + y.total))
     println("housePriceTotal: ")
     for ((bedroom, total) <- housePriceTotal.collect()) println(bedroom + " : " + total)
 
-    val housePriceAvg = housePriceTotal.mapValues(avgCount => avgCount._2 / avgCount._1) // la suma de todos los valores / los valores
+    // sacando el promedio
+    val housePriceAvg = housePriceTotal.mapValues(avgCount => avgCount.total / avgCount.count) // la suma de todos los valores / los valores
     println("housePriceAvg: ")
     for ((bedroom, avg) <- housePriceAvg.collect()) println(bedroom + " : " + avg)
   }
 }
 
-// zupa blow mind con este ejercicio
+// no mas sigo sin entender claramente el la creacion de la case class AVgCount
