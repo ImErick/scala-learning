@@ -12,7 +12,7 @@ object PairRddFromRegularRdd {
     val inputStrings = List("Lily 23", "Jack 29", "Mary 29", "James 8")
     val regularRDDs = sc.parallelize(inputStrings)
 
-    val pairRDD = regularRDDs.map(s => (s.split(" ")(0), s.split(" ")(1))) // map para convertir
+    val pairRDD = regularRDDs.map(s => (s.split(" ")(0), s.split(" ")(1))) // map para separar y convertir
     pairRDD.coalesce(1).saveAsTextFile("out/pair_rdd_from_regular_rdd")
   }
 }
