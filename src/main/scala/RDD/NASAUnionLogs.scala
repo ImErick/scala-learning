@@ -34,6 +34,5 @@ object NASAUnionLogs {
 
   }
 
-  // TODO: como hacer funciones en Scala?
   def isNotHeader(line: String): Boolean = !(line.startsWith("host") & line.contains("bytes")) // esta madre tambien
 }

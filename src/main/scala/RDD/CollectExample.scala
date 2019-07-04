@@ -13,7 +13,6 @@ object CollectExample {
     val wordRdd = sc.parallelize(inputWords)
     println(wordRdd.count())
 
-    //TODO repasar el tema de collect()
     println(wordRdd.collect().foreach(println))
   }
 }
