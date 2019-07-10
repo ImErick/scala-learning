@@ -17,6 +17,6 @@ object PersistExample {
     integersRDD.reduce((x, y) => x * y)
     integersRDD.count()
 
-    // neta no entendi esta wea
+    // revisar nota en OneNote
   }
 }
