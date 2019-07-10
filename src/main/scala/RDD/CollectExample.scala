@@ -11,8 +11,7 @@ object CollectExample {
 
     val inputWords = List("spark", "hadoop", "spark", "hive", "pig", "cassandra", "hadoop")
     val wordRdd = sc.parallelize(inputWords)
-    println(wordRdd.count())
-
-    println(wordRdd.collect().foreach(println))
+    println("tamaño: " + wordRdd.count())
+    wordRdd.collect().foreach(println)
   }
 }
