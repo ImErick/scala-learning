@@ -1,3 +1,3 @@
 package sparkSQL
 
-case class Response(str: String, maybeDouble: Option[Double], str1: String, maybeDouble1: Option[Double])
+case class Response(country: String, age_midpoint: Option[Double], occupation: String, salary_midpoint: Option[Double])
