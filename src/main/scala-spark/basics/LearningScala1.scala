@@ -29,7 +29,7 @@ object LearningScala1 {
     // usar el simbolo de $ para referenciar a las variables dentro de una cadena
     println(s"checa este cagadero papu $numberOne $booleano $letra")
 
-    println(isBest)
+    println("comparacion de 2 String a la malageña: " + isBest)
   }
 
   // some other types
@@ -38,6 +38,7 @@ object LearningScala1 {
   val letra:  Char = 'E'
   val pi: Double = 3.141592
   val piMorePrecision: Float = 3.14159265f
+  val shortNumber: Short = 6666
   val bigNumber: Long = 123456789
   val smallNumber: Byte = 123
 
