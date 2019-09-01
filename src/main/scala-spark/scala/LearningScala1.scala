@@ -1,4 +1,4 @@
-package basics
+package scala
 
 object LearningScala1 {
   def main(args: Array[String]): Unit = {

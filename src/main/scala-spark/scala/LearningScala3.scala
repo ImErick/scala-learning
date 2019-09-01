@@ -1,4 +1,4 @@
-package basics
+package scala
 
 object LearningScala3 {
   // functions in Scala: def <name>(param name: Type): return Type = {code}

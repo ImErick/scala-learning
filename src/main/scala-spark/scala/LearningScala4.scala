@@ -1,4 +1,4 @@
-package basics
+package scala
 
 object LearningScala4 {
   // data structures
