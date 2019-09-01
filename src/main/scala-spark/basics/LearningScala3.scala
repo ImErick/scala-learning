@@ -14,6 +14,13 @@ object LearningScala3 {
   //en Scala se pueden pasar funciones como parametros de otras funciones, OLOVORGO
   def functionInsideFunction(x: Int, f: Int => Int): Int = {f(x)}
 
+  // puedes meter funciones dentro de las funciones donde el return es el return de la funcion interior
+  def BigFunction(uno: Int): Int = {
+    def LittleFunction(otro: Int, numero: Int): Int = otro + numero
+
+    LittleFunction(uno, uno + 1)
+  }
+
   def main(args: Array[String]): Unit = {
     println("cuadrado de 2: " + square(2))
     println("cubo de 2: " + cube(2))
