@@ -1,6 +1,6 @@
 package scala
 
-object InheritanceAndTraits extends App {
+object Inheritance extends App {
 
   // herencia
   class Animal {
