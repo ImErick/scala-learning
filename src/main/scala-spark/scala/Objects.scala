@@ -6,10 +6,11 @@ object Objects extends App {
   object Person {
     val N_EYES = 2
     def canFly: Boolean = false
+    def apply(mother: String, father: String, name: String): Person = new Person(name)
   }
 
   class Person(name: String){
-
+    def getName(): String = name
   }
   // COMPANIONS TODO: investigar mas sobre companions
 
@@ -26,5 +27,7 @@ object Objects extends App {
   val papa = new Person("Chuy")
 
   println(mama == papa) // same memory space? False
+  val sofi = Person.apply("abril", "tizoc", "sofi")
+  println(sofi.getName())
 
 }
