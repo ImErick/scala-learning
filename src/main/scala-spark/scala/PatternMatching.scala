@@ -31,7 +31,7 @@ object PatternMatching extends App {
   println(greetings)
 
   // sealed hierarchies
-  sealed class Animal
+  sealed class Animal // seal no permite extender clases fuera del mismo archivo(?)
   case class Dog(breed: String) extends Animal
   case class Parrot(greeting: String) extends Animal
 

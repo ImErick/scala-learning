@@ -4,8 +4,8 @@ object AbstractDataTypes extends App {
 
   // clases abstractas as usual, puede o no tener solo metodos con parametros, tambien los traits
   abstract class Animal {
-    val creatureType: String = "wild"
-    def eat(): Unit
+    val creatureType: String = "wild" // non-abstract
+    def eat(): Unit // abstract
   }
 
   class Dog extends Animal {
@@ -35,5 +35,9 @@ object AbstractDataTypes extends App {
 
   crocodile.eat(dog)
   println(s"my crocodile has ${crocodile.kindOfBlood()}")
+
+  // traits vs abstract classes: ambos pueden tener o no metodos abtractos
+  // traits no tienen constructores, solo 1 clases pero multiples traits
+  // tratis es para comportamiento y abtractos un objeto en si
 
 }
