@@ -19,5 +19,9 @@ object CaseClasses extends App {
   // tienen metodo pa copiarse
   val nuevoErick = erick.copy() // se le puede pasar valores nuevos en los parentesis
 
-
+  /**
+   * Case classes can be pattern matched
+   * Case classes automatically define hashcode and equals
+   * Case classes automatically define getter methods for the constructor arguments.
+   */
 }
