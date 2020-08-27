@@ -23,6 +23,13 @@ object Options extends App {
   val myFistOption = Some(4)
   println(myFistOption)
 
+  val mySecondOption = None
+  println(myFistOption.isEmpty) // para revisar si devuelve algo, false
+  println(mySecondOption.isEmpty) // true
+
+  println("salvala " + mySecondOption.getOrElse(myFistOption)) // con .get se supone que va a tronar, con .getOrElse la salvas
+  println("esta si a la primera " + myFistOption.getOrElse(throw new RuntimeException("F!")))
+
   println(myFistOption.map(_ * 2))
   println(myFistOption.filter(x => x < 5)) // devuelve None si no cumple la condicion o el Some(x) en caso contrario
   println(myFistOption.flatMap(x => Option(x * 10)))
